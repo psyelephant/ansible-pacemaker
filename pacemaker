@@ -127,6 +127,9 @@ class PrimitiveParser(BaseParser):
                     rc=258,
                     msg="no value in key=value option (key=%s)" % key)
 
+            key = key.strip('"').strip("'")
+            value = value.strip('"').strip("'")
+
             if mode not in ret:
                 ret[mode] = {}
             if (mode == "op"):
